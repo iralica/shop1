@@ -1,22 +1,17 @@
 package com.example.demo.controller;
 
 import com.example.demo.Entity.Product;
-import com.example.demo.Entity.ProductRepository;
 import com.example.demo.repository.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class ProductsController {
+public class ProductsController<ProductRepository> {
     private ProductsRepository repository;
     private final ProductRepository productRepository;
 
@@ -75,14 +70,14 @@ public class ProductsController {
         return repository.getAll(Sort.by(dir, column));
     }
 
-  /*  @PostMapping
-    public String addProduct(
-
+  @PostMapping("/save-Product")
+    public List<Product> saveProduct(
+          @RequestBody Product product
     )
     {
-        productRepository.save(new Product());
-        return "redirect:/Product";
+
+        return repository.saveProduct(product);
     }
-*/
+
 
 }

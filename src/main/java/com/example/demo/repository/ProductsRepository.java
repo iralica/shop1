@@ -31,8 +31,8 @@ public interface ProductsRepository extends CrudRepository<Product, Long> {
     @Query("select p from Product p ORDER BY p.id")
     Page<Product> getPage(Pageable pageable); // Pageable - какая страница, сколько записей на странице
 
-   /* @Query("insert into Product (name, price) values (?, ?)")
-    public List<Product> saveProduct();*/
+   @Query("insert into Product (name, price, is active) values (?, ?, ?)")
+    public List<Product> saveProduct(Product product);
 }
 
 
