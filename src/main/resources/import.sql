@@ -7,3 +7,8 @@ INSERT INTO products (PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_IS_ACTIVE) values ('R
 INSERT INTO products (PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_IS_ACTIVE) values ('Goat cheese', 1.4, 'true');
 INSERT INTO products (PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_IS_ACTIVE) values ('Safety Matches', 0.04, 'false');
 INSERT INTO products (PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_IS_ACTIVE) values ('Calamari burger', 0.55, 'true');
+
+insert into COMMENTS (CONTENT, PRODUCT_ID) values ('Its my favorite product', 1);
+insert into COMMENTS (CONTENT, PRODUCT_ID) values ('I like it very much', 1);
+
+insert into COMMENTS (CONTENT, PRODUCT_ID) values ('Red Bull is best', 2);
